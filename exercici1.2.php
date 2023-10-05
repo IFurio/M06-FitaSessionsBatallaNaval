@@ -288,7 +288,6 @@
             }
 
             echo "  <table>";
-            $limit = "N";
             $asciiValue = 65;
             for ($row = 0; $row <= $rows - 1; $row++) { // for each row
                 echo "\t\t<tr>\n";
