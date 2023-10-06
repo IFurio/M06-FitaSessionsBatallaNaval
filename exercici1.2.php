@@ -50,24 +50,12 @@
     </head>
     <body>
         <?php
+            session_start();
+            if (!isset($_SESSION[''])) {
+
+            }
             echo "  <div class=\"autocenter\">";
             echo "  <h1>Batalla Naval</h1>";
-
-            // fragata = 1, submarino = 2, destructor = 3, portaviones = 4
-
-            $colums = 11;
-            $rows = 11;
-
-            $matrix = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
             function checkAdjacent($fila, $columna) {
                 // logic of adjacent and matrix limits:
@@ -96,6 +84,24 @@
                 }
                 return true;
             }
+
+
+            function setGame() {
+            // fragata = 1, submarino = 2, destructor = 3, portaviones = 4
+
+            $colums = 11;
+            $rows = 11;
+
+            $matrix = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
             // 4 frigates, 3 submarines, 2 destroyers i 1 carrier.
 
@@ -286,6 +292,9 @@
                     }
                 }
             }
+            }
+            setGame();
+            
 
             echo "  <table>";
             $asciiValue = 65;
