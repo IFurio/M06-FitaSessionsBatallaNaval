@@ -321,7 +321,6 @@
                                 echo "\t\t<td><img src=\"./carrier-icon.png\"></td>\n";
                             }
                         }
-                        
                     }
                 }
                 echo "\t\t</tr>\n";
